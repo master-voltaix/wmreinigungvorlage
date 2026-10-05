@@ -21,13 +21,87 @@ nav.addEventListener('click', (e) => {
 });
 
 // Einblenden beim Scrollen
-const reveals = document.querySelectorAll('.reveal');
+const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Überschriften in Wörter zerlegen (Wort-für-Wort-Animation)
+const splitWords = (el) => {
+  let index = 0;
+  const wrap = (content) => {
+    const outer = document.createElement('span');
+    outer.className = 'w';
+    outer.style.setProperty('--w', index++);
+    const inner = document.createElement('span');
+    inner.append(content);
+    outer.append(inner);
+    return outer;
+  };
+  [...el.childNodes].forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach((part) => {
+        if (!part) return;
+        frag.append(/^\s+$/.test(part) ? document.createTextNode(' ') : wrap(part));
+      });
+      node.replaceWith(frag);
+    } else if (node.nodeName !== 'BR') {
+      // Element (z. B. der Punkt im Hero) an das vorherige Wort anhängen
+      const prev = node.previousSibling;
+      if (prev && prev.classList && prev.classList.contains('w')) prev.firstChild.append(node);
+      else node.replaceWith(wrap(node.cloneNode(true)));
+    }
+  });
+  el.classList.add('split');
+};
+
+if (!noMotion) {
+  document.querySelectorAll('h1, main h2').forEach(splitWords);
+
+  // Listen nacheinander einblenden
+  document.querySelectorAll('.area__list, .compare, .checklist, .logos ul, .contact__list, .faq, .plan ul').forEach((list) => {
+    list.classList.add('stagger');
+    [...list.children].forEach((child, i) => child.style.setProperty('--i', i));
+  });
+  document.querySelectorAll('.why__list, .plans').forEach((group) => {
+    [...group.children].forEach((child, i) => { child.style.transitionDelay = (i * 80) + 'ms'; });
+  });
+
+  // Scroll-Fortschritt + Parallax im Hero
+  const progress = document.createElement('div');
+  progress.className = 'progress';
+  document.body.prepend(progress);
+  const heroBg = document.querySelector('.hero__bg');
+  const mobilebar = document.querySelector('.mobilebar');
+  let ticking = false;
+  const onFrame = () => {
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.transform = 'scaleX(' + (max > 0 ? y / max : 0) + ')';
+    if (heroBg && y < window.innerHeight * 1.2) heroBg.style.translate = '0 ' + (y * 0.14).toFixed(1) + 'px';
+    mobilebar.classList.toggle('is-visible', y > 320);
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onFrame); }
+  }, { passive: true });
+  onFrame();
+}
+
+const reveals = document.querySelectorAll('.reveal, main h2.split, .stagger');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      entry.target.classList.add('is-in');
-      io.unobserve(entry.target);
+      const el = entry.target;
+      el.classList.add('is-in');
+      io.unobserve(el);
+      // Nach der Animation aufräumen, damit Hover-Effekte wieder ihre eigenen Übergänge nutzen
+      setTimeout(() => {
+        el.classList.add('is-done');
+        if (el.classList.contains('reveal')) {
+          el.classList.remove('reveal');
+          el.style.transitionDelay = '';
+        }
+      }, 2200);
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach((el) => io.observe(el));

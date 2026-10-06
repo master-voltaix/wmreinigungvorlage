@@ -1,5 +1,48 @@
 document.documentElement.classList.add('js');
 
+// Kampagnen-Parameter aus Google Ads: ?ort=koeln&leistung=bueroreinigung passt Überschrift und Formular an
+const campaign = new URLSearchParams(window.location.search);
+const norm = (value) => (value || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+  .replace(/ae/g, 'a').replace(/oe/g, 'o').replace(/ue/g, 'u').replace(/[^a-z]/g, '');
+const ORTE = ['Düsseldorf', 'Neuss', 'Ratingen', 'Meerbusch', 'Duisburg', 'Essen', 'Krefeld', 'Mönchengladbach', 'Wuppertal', 'Leverkusen', 'Köln', 'Hilden'];
+const LEISTUNGEN = {
+  buero: 'Büroreinigung', praxis: 'Praxisreinigung', industrie: 'Industriereinigung',
+  unterhalt: 'Unterhaltsreinigung', treppenhaus: 'Treppenhausreinigung', glas: 'Glasreinigung',
+};
+const LEISTUNG_FORMULAR = { treppenhaus: 'Unterhaltsreinigung' };
+const ort = ORTE.find((name) => norm(name) === norm(campaign.get('ort')));
+const leistungKey = Object.keys(LEISTUNGEN).find((key) => norm(campaign.get('leistung')).startsWith(norm(key)));
+const leistung = leistungKey ? LEISTUNGEN[leistungKey] : null;
+
+if (ort || leistung) {
+  const h1 = document.querySelector('.hero h1');
+  h1.firstChild.textContent = (leistung || 'Reinigungsfirma') + ' in ' + (ort || 'Düsseldorf');
+  document.title = (leistung || 'Reinigungsfirma') + ' ' + (ort || 'Düsseldorf') + ' – zum Festpreis | Nordklar';
+  if (ort) {
+    document.querySelectorAll('[data-ort]').forEach((el) => { el.textContent = ort; });
+    document.querySelectorAll('[data-ort-region]').forEach((el) => { el.textContent = ort + ' & Umgebung'; });
+  }
+  if (leistung) {
+    document.querySelectorAll('[data-leistung-liste]').forEach((el) => { el.textContent = leistung; });
+    const value = LEISTUNG_FORMULAR[leistungKey] || leistung;
+    document.querySelectorAll('input[name="leistung"]').forEach((input) => { input.checked = input.value === value; });
+    document.querySelectorAll('select[name="leistung"]').forEach((select) => {
+      [...select.options].forEach((option) => { option.selected = option.textContent === value; });
+    });
+  }
+}
+
+// Klick-ID und UTM-Werte in jedes Formular übernehmen (für die Zuordnung der Anfrage zur Anzeige)
+['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach((key) => {
+  const value = campaign.get(key);
+  if (!value) return;
+  document.querySelectorAll('form').forEach((form) => {
+    const input = document.createElement('input');
+    input.type = 'hidden'; input.name = key; input.value = value.slice(0, 200);
+    form.append(input);
+  });
+});
+
 // Header-Schatten beim Scrollen
 const header = document.querySelector('.header');
 const onScroll = () => header.classList.toggle('is-stuck', window.scrollY > 8);
@@ -183,4 +226,95 @@ document.querySelectorAll('.js-form').forEach((form) => {
     msg.textContent = 'Vielen Dank! Wir melden uns innerhalb eines Werktages bei Ihnen.';
     form.reset();
   });
+});
+
+// Anfrageformular in drei Schritten (Hero)
+const lead = document.querySelector('.js-lead');
+if (lead) {
+  const steps = [...lead.querySelectorAll('.lead__step')];
+  const bar = lead.querySelector('.lead__bar span');
+  const count = lead.querySelector('.lead__count');
+  const msg = lead.querySelector('.form__msg');
+  let current = 0;
+
+  const show = (index) => {
+    current = index;
+    steps.forEach((step, n) => { step.hidden = n !== index; });
+    bar.style.transform = 'scaleX(' + (index + 1) / steps.length + ')';
+    count.textContent = 'Schritt ' + (index + 1) + ' von ' + steps.length;
+    msg.textContent = '';
+  };
+
+  const stepValid = (step) => {
+    let valid = true;
+    const groups = new Set();
+    step.querySelectorAll('[required]').forEach((field) => {
+      if (field.type === 'radio') { groups.add(field.name); return; }
+      const ok = field.checkValidity();
+      field.classList.toggle('is-invalid', !ok);
+      if (!ok) valid = false;
+    });
+    groups.forEach((name) => { if (!lead.querySelector('input[name="' + name + '"]:checked')) valid = false; });
+    msg.classList.toggle('is-error', !valid);
+    msg.textContent = valid ? '' : 'Bitte ergänzen Sie die fehlenden Angaben.';
+    return valid;
+  };
+
+  const next = () => {
+    if (!stepValid(steps[current])) return;
+    track('anfrage_schritt', { schritt: current + 1 });
+    show(current + 1);
+    const field = steps[current].querySelector('input:not([type="radio"])');
+    if (field && window.matchMedia('(min-width: 1021px)').matches) field.focus({ preventScroll: true });
+  };
+
+  // Kommt die Leistung schon aus der Anzeige, startet das Formular bei Schritt 2
+  show(lead.querySelector('input[name="leistung"]:checked') ? 1 : 0);
+
+  // Schritt 1: Auswahl führt direkt weiter
+  steps[0].addEventListener('change', () => setTimeout(next, 260));
+  lead.addEventListener('click', (e) => {
+    if (e.target.closest('[data-next]')) next();
+    if (e.target.closest('[data-back]')) show(current - 1);
+  });
+
+  lead.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (current < steps.length - 1) { next(); return; }
+    if (!stepValid(steps[current])) return;
+    track('angebot_anfrage', { formular: lead.dataset.form, leistung: lead.elements.leistung.value, flaeche: lead.elements.flaeche.value });
+    const firstName = lead.elements.name.value.trim().split(/\s+/)[0];
+    lead.querySelector('[data-lead-name]').textContent = firstName ? ', ' + firstName : '';
+    steps.forEach((step) => { step.hidden = true; });
+    lead.querySelector('.lead__head').hidden = true;
+    lead.querySelector('.lead__done').hidden = false;
+    lead.classList.add('is-sent');
+  });
+}
+
+// Logo-Laufband: Inhalt verdoppeln für eine nahtlose Schleife
+document.querySelectorAll('.marquee__track').forEach((trackEl) => {
+  if (noMotion) return;
+  [...trackEl.children].forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    trackEl.append(clone);
+  });
+  trackEl.classList.add('is-running');
+});
+
+// Schwebender Angebots-Button: nur sichtbar, wenn gerade kein Formular im Bild ist
+const floatCta = document.querySelector('.floatcta');
+if (floatCta && 'IntersectionObserver' in window) {
+  const visible = new Set();
+  const fo = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { entry.isIntersecting ? visible.add(entry.target) : visible.delete(entry.target); });
+    floatCta.classList.toggle('is-visible', visible.size === 0);
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.hero, #kontakt, .cta, .footer').forEach((el) => fo.observe(el));
+}
+
+// Fehlermarkierung entfernen, sobald das Feld korrigiert wird
+document.addEventListener('input', (e) => {
+  if (e.target.classList && e.target.classList.contains('is-invalid') && e.target.checkValidity()) e.target.classList.remove('is-invalid');
 });

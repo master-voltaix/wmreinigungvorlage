@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nordklar Gebäudereinigung – Saubere Räume, stärkere Unternehmen</title>
-  <meta name="description" content="Nordklar Gebäudereinigung in Düsseldorf: Büroreinigung, Industriereinigung, Praxisreinigung und Unterhaltsreinigung – zuverlässig, flexibel und nachhaltig.">
+  <title>Reinigungsfirma Düsseldorf – Gebäudereinigung zum Festpreis | Nordklar</title>
+  <meta name="description" content="Ihre Reinigungsfirma in Düsseldorf: Büro-, Praxis-, Industrie- und Unterhaltsreinigung mit festem Team, Festpreis und Zufriedenheitsgarantie. Kostenloses Angebot in 24 Stunden.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -61,6 +61,10 @@
   <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"/><path d="M9 8h6M9 12h6"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 2.500l2.900 6.200 6.600.8-4.900 4.600 1.300 6.600L12 17.400l-5.900 3.300 1.300-6.600L2.500 9.500l6.600-.8L12 2.500z"/></symbol>
   <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 1c.7 6 3.500 9.300 10 11-6.500 1.700-9.300 5-10 11-.7-6-3.500-9.300-10-11C8.500 10.300 11.300 7 12 1z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9.500" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="3.500" width="16" height="17" rx="1.500"/><path d="M12 3.500v17M4 12h16"/></symbol>
+  <symbol id="i-dots" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.300"/><circle cx="12" cy="12" r="1.300"/><circle cx="18" cy="12" r="1.300"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9.500" r="5.500"/><path d="M8.500 14l-1.500 7 5-2.500 5 2.500-1.500-7"/></symbol>
   <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2.500"/><path d="M8 10.500V17M8 7.200v.1M12 17v-4a2.200 2.200 0 0 1 4.400 0v4M12 10.500V17"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.200 6.800v.1"/></symbol>
   <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.500" y="5.500" width="19" height="13" rx="3.500"/><path d="M10.200 9.300v5.400l4.600-2.700-4.600-2.700z"/></symbol>
@@ -107,7 +111,7 @@
       </div>
       <div class="nav__item"><a href="#ueber-uns">Über uns</a></div>
       <div class="nav__item"><a href="#pakete">Preise</a></div>
-      <div class="nav__item"><a href="#bewertungen">Referenzen</a></div>
+      <div class="nav__item"><a href="#bewertungen">Bewertungen</a></div>
       <div class="nav__item"><a href="#kontakt">Kontakt</a></div>
     </nav>
 
@@ -116,7 +120,7 @@
         <svg class="icon"><use href="#i-phone"/></svg>
         <span><strong>+49 211 748 920 0</strong><small>Mo–Fr 8–17 Uhr</small></span>
       </a>
-      <a href="#kontakt" class="btn btn--navy btn--sm">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
+      <a href="#angebot" class="btn btn--navy btn--sm">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
       <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -125,65 +129,132 @@
 <main>
 
 <!-- Hero -->
-<section class="hero">
+<section class="hero hero--lead">
   <img class="hero__bg" src="assets/img/hero.jpg" alt="Nordklar-Mitarbeiterin reinigt eine Glaswand in einem modernen Büro" width="1920" height="1280" fetchpriority="high">
-  <div class="container hero__inner">
+  <div class="container hero__grid">
     <div class="hero__content">
-      <p class="eyebrow eyebrow--light">Professionelle Gebäudereinigung</p>
-      <h1>Saubere Räume<br>stärkere Unternehmen<span class="dot">.</span></h1>
-      <p class="hero__lead">Wir sorgen für hygienische, repräsentative und werterhaltende Arbeitsumgebungen – zuverlässig, flexibel und nachhaltig.</p>
-      <div class="hero__actions">
-        <a href="#kontakt" class="btn btn--blue">Kostenloses Angebot erhalten <svg class="icon"><use href="#i-arrow"/></svg></a>
-        <a href="#leistungen" class="btn btn--ghost">Unsere Leistungen</a>
+      <p class="hero__loc"><svg class="icon"><use href="#i-pin"/></svg><span data-ort-region>Düsseldorf &amp; Rhein-Ruhr-Gebiet</span><i></i>Seit 2014</p>
+      <h1>Reinigungsfirma in Düsseldorf<br>Sauber. Pünktlich. Zum Festpreis<span class="dot">.</span></h1>
+      <p class="hero__lead"><strong data-leistung-liste>Büro-, Praxis-, Industrie- und Unterhaltsreinigung</strong> für Unternehmen in <span data-ort>Düsseldorf</span> und Umgebung – mit festem Team, persönlicher Objektleitung und Zufriedenheitsgarantie.</p>
+      <ul class="hero__checks">
+        <li><svg class="icon"><use href="#i-check"/></svg>Kostenlose Besichtigung vor Ort</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Festpreis-Angebot innerhalb von 24 Stunden</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Monatlich kündbar – keine lange Bindung</li>
+      </ul>
+      <div class="hero__proof">
+        <div class="hero__avatars">
+          <img src="assets/img/kunde-1.jpg" alt="" width="160" height="160">
+          <img src="assets/img/kunde-2.jpg" alt="" width="160" height="160">
+          <img src="assets/img/kunde-3.jpg" alt="" width="160" height="160">
+        </div>
+        <div>
+          <p class="hero__rating"><span class="stars"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></span><strong>4,9 / 5</strong></p>
+          <p>aus 127 Google-Bewertungen · über 250 betreute Objekte</p>
+        </div>
       </div>
-      <p class="hero__note"><span><svg class="icon"><use href="#i-check"/></svg>Kostenlos &amp; unverbindlich</span><span><svg class="icon"><use href="#i-check"/></svg>Antwort innerhalb von 24 Stunden</span></p>
     </div>
-    <ul class="hero__trust">
-      <li><svg class="icon"><use href="#i-shield"/></svg><span><strong>Zertifizierte<br>Qualität</strong><small>nach ISO 9001</small></span></li>
-      <li><svg class="icon"><use href="#i-leaf"/></svg><span><strong>Nachhaltige<br>Reinigungsmittel</strong><small>für Mensch und Umwelt</small></span></li>
-      <li><svg class="icon"><use href="#i-users"/></svg><span><strong>Geschultes<br>Fachpersonal</strong><small>mit Erfahrung</small></span></li>
-    </ul>
-  </div>
-</section>
 
-<!-- Schnellanfrage -->
-<section class="quick" id="schnellanfrage">
-  <div class="container">
-    <form class="quick__card js-form" data-form="schnellanfrage" novalidate>
-      <div class="quick__title">
-        <strong>Angebot in 60 Sekunden anfragen</strong>
-        <span>Wir melden uns innerhalb eines Werktages.</span>
+    <form class="leadform js-lead" id="angebot" data-form="hero-anfrage" novalidate>
+      <div class="lead__head">
+        <p class="lead__title">Kostenloses Angebot anfordern</p>
+        <p class="lead__sub">3 kurze Fragen · dauert unter 60 Sekunden</p>
+        <div class="lead__progress"><div class="lead__bar"><span></span></div><span class="lead__count">Schritt 1 von 3</span></div>
       </div>
-      <label>Leistung
-        <select name="leistung">
-          <option>Büroreinigung</option>
-          <option>Industriereinigung</option>
-          <option>Praxisreinigung</option>
-          <option>Unterhaltsreinigung</option>
-          <option>Sonderreinigung</option>
-        </select>
-      </label>
-      <label>Fläche (ca. m²)<input type="text" name="flaeche" inputmode="numeric" placeholder="z. B. 350"></label>
-      <label>PLZ*<input type="text" name="plz" inputmode="numeric" pattern="[0-9]{5}" required placeholder="40210" autocomplete="postal-code"></label>
-      <label>Telefon*<input type="tel" name="telefon" required placeholder="Für Ihren Rückruf" autocomplete="tel"></label>
-      <button type="submit" class="btn btn--blue">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></button>
+
+      <fieldset class="lead__step" data-step="1">
+        <legend>Was soll gereinigt werden?</legend>
+        <div class="lead__tiles">
+          <label><input type="radio" name="leistung" value="Büroreinigung" required><span><svg class="icon"><use href="#i-building"/></svg>Büro</span></label>
+          <label><input type="radio" name="leistung" value="Praxisreinigung"><span><svg class="icon"><use href="#i-medical"/></svg>Praxis</span></label>
+          <label><input type="radio" name="leistung" value="Industriereinigung"><span><svg class="icon"><use href="#i-gear"/></svg>Industrie &amp; Halle</span></label>
+          <label><input type="radio" name="leistung" value="Unterhaltsreinigung"><span><svg class="icon"><use href="#i-home"/></svg>Treppenhaus &amp; Objekt</span></label>
+          <label><input type="radio" name="leistung" value="Glasreinigung"><span><svg class="icon"><use href="#i-window"/></svg>Glas &amp; Fassade</span></label>
+          <label><input type="radio" name="leistung" value="Sonstiges"><span><svg class="icon"><use href="#i-dots"/></svg>Etwas anderes</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="lead__step" data-step="2" hidden>
+        <legend>Wie groß ist die Fläche?</legend>
+        <div class="lead__chips">
+          <label><input type="radio" name="flaeche" value="bis 200 m²" required><span>bis 200 m²</span></label>
+          <label><input type="radio" name="flaeche" value="200–500 m²"><span>200–500 m²</span></label>
+          <label><input type="radio" name="flaeche" value="500–1.500 m²"><span>500–1.500 m²</span></label>
+          <label><input type="radio" name="flaeche" value="über 1.500 m²"><span>über 1.500 m²</span></label>
+        </div>
+        <p class="lead__legend">Wie oft soll gereinigt werden?</p>
+        <div class="lead__chips">
+          <label><input type="radio" name="intervall" value="Täglich" required><span>Täglich</span></label>
+          <label><input type="radio" name="intervall" value="Mehrmals pro Woche"><span>Mehrmals pro Woche</span></label>
+          <label><input type="radio" name="intervall" value="Wöchentlich"><span>Wöchentlich</span></label>
+          <label><input type="radio" name="intervall" value="Einmalig"><span>Einmalig</span></label>
+        </div>
+        <div class="lead__nav">
+          <button type="button" class="lead__back" data-back>Zurück</button>
+          <button type="button" class="btn btn--blue" data-next>Weiter <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+      </fieldset>
+
+      <fieldset class="lead__step" data-step="3" hidden>
+        <legend>Wohin dürfen wir Ihr Angebot senden?</legend>
+        <div class="lead__fields">
+          <label>Name*<input type="text" name="name" required autocomplete="name" placeholder="Vor- und Nachname"></label>
+          <label>Telefon*<input type="tel" name="telefon" required autocomplete="tel" placeholder="Für Rückfragen zum Objekt"></label>
+          <label>E-Mail*<input type="email" name="email" required autocomplete="email" placeholder="name@unternehmen.de"></label>
+          <label>PLZ des Objekts<input type="text" name="plz" inputmode="numeric" autocomplete="postal-code" placeholder="40210"></label>
+        </div>
+        <div class="lead__nav">
+          <button type="button" class="lead__back" data-back>Zurück</button>
+          <button type="submit" class="btn btn--blue">Angebot kostenlos anfordern <svg class="icon"><use href="#i-arrow"/></svg></button>
+        </div>
+        <p class="lead__legal">Mit dem Absenden stimmen Sie unserer <a href="#">Datenschutzerklärung</a> zu.</p>
+      </fieldset>
+
       <p class="form__msg" role="status"></p>
+
+      <div class="lead__done" hidden>
+        <span class="lead__ok"><svg class="icon"><use href="#i-check"/></svg></span>
+        <p class="lead__title">Vielen Dank<span data-lead-name></span>!</p>
+        <p>Ihre Anfrage ist bei uns eingegangen. So geht es weiter:</p>
+        <ol>
+          <li>Wir rufen Sie innerhalb eines Werktages an.</li>
+          <li>Wir besichtigen Ihr Objekt – kostenlos.</li>
+          <li>Sie erhalten Ihr Festpreis-Angebot.</li>
+        </ol>
+        <a href="tel:+492117489200" class="lead__phone"><svg class="icon"><use href="#i-phone"/></svg>Eilig? +49 211 748 920 0</a>
+      </div>
+
+      <ul class="lead__trust">
+        <li><svg class="icon"><use href="#i-lock"/></svg>Kostenlos &amp; unverbindlich</li>
+        <li><svg class="icon"><use href="#i-clock"/></svg>Antwort in 24 Stunden</li>
+      </ul>
     </form>
   </div>
 </section>
 
-<!-- Kundenlogos -->
-<section class="logos" aria-label="Referenzen">
-  <div class="container logos__inner">
-    <p>Über 250 Unternehmen<br>vertrauen auf Nordklar</p>
-    <ul>
-      <li class="lg lg--1">KELLER<span>CONSULTING</span></li>
-      <li class="lg lg--2">berger<b>.</b></li>
-      <li class="lg lg--3">Rheinwerk</li>
-      <li class="lg lg--4">MEDI<span>ZENTRUM</span></li>
-      <li class="lg lg--5">hafenquartier</li>
-      <li class="lg lg--6">VOSS &amp; PARTNER</li>
+<!-- Vertrauen -->
+<section class="trust" aria-label="Zertifikate und Referenzen">
+  <div class="container">
+    <ul class="trust__badges stagger-load">
+      <li><svg class="icon"><use href="#i-shield"/></svg><span><strong>ISO 9001 zertifiziert</strong>Geprüftes Qualitätsmanagement</span></li>
+      <li><svg class="icon"><use href="#i-award"/></svg><span><strong>Meisterbetrieb</strong>Mitglied der Gebäudereiniger-Innung</span></li>
+      <li><svg class="icon"><use href="#i-lock"/></svg><span><strong>Bis 10 Mio. € versichert</strong>Betriebshaftpflicht für Ihr Objekt</span></li>
+      <li><svg class="icon"><use href="#i-users"/></svg><span><strong>Fest angestellte Teams</strong>Tariflich bezahlt, keine Subunternehmer</span></li>
     </ul>
+    <div class="trust__logos">
+      <p>Über 250 Unternehmen aus der Region vertrauen auf Nordklar</p>
+      <div class="marquee">
+        <ul class="marquee__track">
+          <li class="lg lg--1">KELLER<span>CONSULTING</span></li>
+          <li class="lg lg--2">berger<b>.</b></li>
+          <li class="lg lg--3">Rheinwerk</li>
+          <li class="lg lg--4">MEDI<span>ZENTRUM</span></li>
+          <li class="lg lg--5">hafenquartier</li>
+          <li class="lg lg--6">VOSS &amp; PARTNER</li>
+          <li class="lg lg--2">nordpark<b>.</b></li>
+          <li class="lg lg--6">ALBRECHT IMMOBILIEN</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -239,6 +310,67 @@
   </div>
 </section>
 
+<!-- Kundenstimmen -->
+<section class="section rev" id="bewertungen">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Das sagen unsere Kunden</p>
+        <h2>Vertrauen, das für sich spricht.</h2>
+      </div>
+      <a href="#angebot" class="link-arrow">Jetzt selbst überzeugen <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="rev__grid">
+      <aside class="rev__summary reveal">
+        <p class="rev__score">4,9</p>
+        <span class="stars"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></span>
+        <p class="rev__based">Basierend auf 127 Google-Bewertungen</p>
+        <ul class="rev__bars">
+          <li><span>5</span><i><b style="--v:.92"></b></i><span>92 %</span></li>
+          <li><span>4</span><i><b style="--v:.06"></b></i><span>6 %</span></li>
+          <li><span>3</span><i><b style="--v:.02"></b></i><span>2 %</span></li>
+          <li><span>2</span><i><b style="--v:0"></b></i><span>0 %</span></li>
+          <li><span>1</span><i><b style="--v:0"></b></i><span>0 %</span></li>
+        </ul>
+        <p class="rev__fact"><strong>98 %</strong> unserer Kunden empfehlen uns weiter.</p>
+        <a href="#angebot" class="btn btn--blue rev__btn">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
+      </aside>
+      <div class="rev__list">
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 2 Wochen</span></div>
+          <blockquote>„Zuverlässig, gründlich und immer freundlich. Seit über 3 Jahren unser Partner für die Büroreinigung – absolute Empfehlung!“</blockquote>
+          <figcaption><img src="assets/img/kunde-1.jpg" alt="" width="160" height="160"><span><strong>Maria Keller</strong>Keller Consulting GmbH</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 3 Wochen</span></div>
+          <blockquote>„Nach dem Wechsel zu Nordklar gab es bei uns keine einzige Reklamation mehr. Die Objektleiterin ist immer direkt erreichbar.“</blockquote>
+          <figcaption><span class="avatar avatar--1">JA</span><span><strong>Jonas Albrecht</strong>Facility Manager, Hafenquartier</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 1 Monat</span></div>
+          <blockquote>„Professionelle Abwicklung, hohe Flexibilität und ein spürbar sauberes Ergebnis. Genau so stellt man sich Partnerschaft vor.“</blockquote>
+          <figcaption><img src="assets/img/kunde-2.jpg" alt="" width="160" height="160"><span><strong>Thomas Berger</strong>Berger Industrieanlagen</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 1 Monat</span></div>
+          <blockquote>„Das Angebot kam am nächsten Tag, der Start eine Woche später. Unkompliziert und sehr sauber – auch in den Sanitärbereichen.“</blockquote>
+          <figcaption><span class="avatar avatar--2">PV</span><span><strong>Petra Voss</strong>Voss &amp; Partner Steuerberatung</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 2 Monaten</span></div>
+          <blockquote>„Besonders schätzen wir die nachhaltige Arbeitsweise und das engagierte Team. Unsere Praxisräume waren noch nie so sauber und einladend.“</blockquote>
+          <figcaption><img src="assets/img/kunde-3.jpg" alt="" width="160" height="160"><span><strong>Dr. Sabrina Neumann</strong>Zahnärztin, Neumann &amp; Kollegen</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+        <figure class="review reveal">
+          <div class="review__top"><div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div><span class="review__when">vor 2 Monaten</span></div>
+          <blockquote>„Wir lassen 4.000 m² Produktionsfläche reinigen. Termintreu, sauber dokumentiert und fair im Preis.“</blockquote>
+          <figcaption><span class="avatar avatar--3">MK</span><span><strong>Mehmet Kaya</strong>Betriebsleiter, Rheinwerk</span><em class="review__verified"><svg class="icon"><use href="#i-check"/></svg>Google-Bewertung</em></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Über uns -->
 <section class="section about" id="ueber-uns">
   <div class="container about__grid">
@@ -248,7 +380,7 @@
       <p class="lead">Saubere und gepflegte Räume sind die Basis für Wohlbefinden, Gesundheit und Leistungsfähigkeit. Deshalb setzen wir auf höchste Reinigungsstandards, geschultes Personal und nachhaltige Lösungen.</p>
       <a href="#vorteile" class="btn btn--navy">Mehr über uns <svg class="icon"><use href="#i-arrow"/></svg></a>
       <dl class="stats">
-        <div><dt data-count="10" data-suffix="+">10+</dt><dd>Jahre Erfahrung</dd></div>
+        <div><dt data-count="12" data-suffix="+">12+</dt><dd>Jahre Erfahrung</dd></div>
         <div><dt data-count="250" data-suffix="+">250+</dt><dd>Zufriedene Kunden</dd></div>
         <div><dt data-count="98" data-suffix="%">98%</dt><dd>Weiterempfehlung</dd></div>
       </dl>
@@ -293,64 +425,39 @@
   </div>
 </section>
 
-<!-- Philosophie / Nachhaltigkeit -->
-<section class="section philo" id="nachhaltigkeit">
-  <div class="container philo__grid">
-    <div class="philo__media">
-      <img src="assets/img/philosophie.jpg" alt="Lichtdurchflutete, makellos saubere Büroetage" decoding="async" width="1500" height="900">
-      <p class="philo__note">Mehr als Reinigung –<br>ein Beitrag zu gesunden und erfolgreichen Arbeitswelten.</p>
-    </div>
-    <div class="philo__text reveal">
-      <p class="eyebrow">Unsere Philosophie</p>
-      <h2>Sauberkeit schafft<br>Möglichkeiten.</h2>
-      <p class="lead">Wir bei Nordklar sind überzeugt: Gepflegte Räume wirken – auf Mitarbeitende, Kunden und Patienten. Deshalb arbeiten wir mit ökologisch zertifizierten Reinigungsmitteln, dosiergenauen Systemen und ressourcenschonenden Verfahren.</p>
-      <ul class="checklist">
-        <li><svg class="icon"><use href="#i-check"/></svg>Reinigungsmittel mit EU Ecolabel</li>
-        <li><svg class="icon"><use href="#i-check"/></svg>Bis zu 40&nbsp;% weniger Wasserverbrauch</li>
-        <li><svg class="icon"><use href="#i-check"/></svg>Mikrofasersysteme statt Einwegtücher</li>
-        <li><svg class="icon"><use href="#i-check"/></svg>Kurze Wege durch regionale Teams</li>
-      </ul>
-      <a href="#kontakt" class="btn btn--navy">Mehr über Nordklar <svg class="icon"><use href="#i-arrow"/></svg></a>
-    </div>
-  </div>
-</section>
-
-<!-- Branchen -->
-<section class="section section--tint" id="branchen">
+<!-- Fallbeispiele -->
+<section class="section section--tint" id="referenzen">
   <div class="container">
     <div class="section__head section__head--split">
       <div>
-        <p class="eyebrow">Branchen</p>
-        <h2>Individuelle Reinigungslösungen<br>für jede Branche.</h2>
+        <p class="eyebrow">Fallbeispiele</p>
+        <h2>Ergebnisse, die man messen kann.</h2>
       </div>
-      <p class="lead">Jede Umgebung stellt eigene Anforderungen – wir bieten maßgeschneiderte Konzepte, die exakt zu Ihrem Unternehmen passen.</p>
+      <p class="lead">Drei Objekte aus der Region – und was sich nach dem Wechsel zu Nordklar konkret verändert hat.</p>
     </div>
-
-    <div class="tiles">
-      <a href="#kontakt" class="tile">
-        <div class="tile__img"><img src="assets/img/branche-buero.jpg" alt="Besprechungsraum mit großen Fenstern" decoding="async" width="900" height="600"></div>
-        <h3>Büros &amp; Verwaltung</h3>
-        <p>Saubere Arbeitsplätze für motivierte Teams.</p>
-        <svg class="icon"><use href="#i-arrow"/></svg>
-      </a>
-      <a href="#kontakt" class="tile">
-        <div class="tile__img"><img src="assets/img/branche-industrie.jpg" alt="Reinraum-Produktion mit glänzendem Boden" decoding="async" width="900" height="600"></div>
-        <h3>Industrie &amp; Produktion</h3>
-        <p>Reinigungslösungen für komplexe und sensible Bereiche.</p>
-        <svg class="icon"><use href="#i-arrow"/></svg>
-      </a>
-      <a href="#kontakt" class="tile">
-        <div class="tile__img"><img src="assets/img/branche-gesundheit.jpg" alt="Behandlungszimmer einer Arztpraxis" decoding="async" width="900" height="600"></div>
-        <h3>Gesundheitswesen</h3>
-        <p>Höchste Hygienestandards für Patienten und Personal.</p>
-        <svg class="icon"><use href="#i-arrow"/></svg>
-      </a>
-      <a href="#kontakt" class="tile">
-        <div class="tile__img"><img src="assets/img/branche-immobilien.jpg" alt="Fassade einer modernen Wohnanlage" decoding="async" width="900" height="600"></div>
-        <h3>Immobilien &amp; Wohnanlagen</h3>
-        <p>Gepflegte Objekte – langfristig wertbeständig.</p>
-        <svg class="icon"><use href="#i-arrow"/></svg>
-      </a>
+    <div class="cases">
+      <article class="case reveal">
+        <p class="case__tag">Büro · 2.400 m² · Düsseldorf Medienhafen</p>
+        <h3>Beratungsgesellschaft mit 180 Arbeitsplätzen</h3>
+        <p>Vorher wechselte das Reinigungspersonal monatlich. Heute betreut ein festes Dreierteam das Objekt – mit monatlicher Qualitätskontrolle.</p>
+        <dl><div><dt>0</dt><dd>Reklamationen seit 14 Monaten</dd></div><div><dt>5×</dt><dd>Reinigung pro Woche</dd></div></dl>
+      </article>
+      <article class="case reveal">
+        <p class="case__tag">Praxis · 380 m² · Neuss</p>
+        <h3>Zahnarztpraxis mit vier Behandlungszimmern</h3>
+        <p>Individueller Hygieneplan nach RKI-Empfehlung, dokumentiert und jederzeit einsehbar – auch für die Praxisbegehung.</p>
+        <dl><div><dt>100 %</dt><dd>dokumentierte Hygieneschritte</dd></div><div><dt>24 h</dt><dd>Reaktionszeit bei Sonderwünschen</dd></div></dl>
+      </article>
+      <article class="case reveal">
+        <p class="case__tag">Industrie · 4.000 m² · Ratingen</p>
+        <h3>Produktionsbetrieb im Zwei-Schicht-System</h3>
+        <p>Maschinelle Bodenreinigung zwischen den Schichten – ohne Stillstand. Der Reinigungsaufwand wurde neu geplant und fair kalkuliert.</p>
+        <dl><div><dt>−18 %</dt><dd>Reinigungskosten pro Jahr</dd></div><div><dt>0 h</dt><dd>Produktionsausfall</dd></div></dl>
+      </article>
+    </div>
+    <div class="inline-cta reveal">
+      <p><strong>Wie sähe das für Ihr Objekt aus?</strong> Wir rechnen es Ihnen unverbindlich durch.</p>
+      <a href="#angebot" class="btn btn--blue">Kostenloses Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -473,33 +580,64 @@
   </div>
 </section>
 
-<!-- Kundenstimmen -->
-<section class="section" id="bewertungen">
+<!-- Branchen -->
+<section class="section section--tint" id="branchen">
   <div class="container">
-    <div class="section__head">
+    <div class="section__head section__head--split">
       <div>
-        <p class="eyebrow">Das sagen unsere Kunden</p>
-        <h2>Vertrauen, das für sich spricht.</h2>
-        <p class="rating"><strong>4,9</strong><span class="stars"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></span>aus 127 Google-Bewertungen</p>
+        <p class="eyebrow">Branchen</p>
+        <h2>Individuelle Reinigungslösungen<br>für jede Branche.</h2>
       </div>
-      <a href="#kontakt" class="link-arrow">Alle Bewertungen ansehen <svg class="icon"><use href="#i-arrow"/></svg></a>
+      <p class="lead">Jede Umgebung stellt eigene Anforderungen – wir bieten maßgeschneiderte Konzepte, die exakt zu Ihrem Unternehmen passen.</p>
     </div>
-    <div class="reviews">
-      <figure class="review reveal">
-        <div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
-        <blockquote>„Zuverlässig, gründlich und immer freundlich. Seit über 3 Jahren unser Partner für die Büroreinigung – absolute Empfehlung!“</blockquote>
-        <figcaption><img src="assets/img/kunde-1.jpg" alt="" decoding="async" width="160" height="160"><span><strong>Maria Keller</strong>Keller Consulting GmbH</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
-        <blockquote>„Professionelle Abwicklung, hohe Flexibilität und ein spürbar sauberes Ergebnis. Genau so stellt man sich Partnerschaft vor.“</blockquote>
-        <figcaption><img src="assets/img/kunde-2.jpg" alt="" decoding="async" width="160" height="160"><span><strong>Thomas Berger</strong>Berger Industrieanlagen</span></figcaption>
-      </figure>
-      <figure class="review reveal">
-        <div class="review__stars" aria-label="5 von 5 Sternen"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
-        <blockquote>„Besonders schätzen wir die nachhaltige Arbeitsweise und das engagierte Team. Unsere Praxisräume waren noch nie so sauber und einladend.“</blockquote>
-        <figcaption><img src="assets/img/kunde-3.jpg" alt="" decoding="async" width="160" height="160"><span><strong>Dr. Sabrina Neumann</strong>Zahnärztin, Neumann &amp; Kollegen</span></figcaption>
-      </figure>
+
+    <div class="tiles">
+      <a href="#kontakt" class="tile">
+        <div class="tile__img"><img src="assets/img/branche-buero.jpg" alt="Besprechungsraum mit großen Fenstern" decoding="async" width="900" height="600"></div>
+        <h3>Büros &amp; Verwaltung</h3>
+        <p>Saubere Arbeitsplätze für motivierte Teams.</p>
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#kontakt" class="tile">
+        <div class="tile__img"><img src="assets/img/branche-industrie.jpg" alt="Reinraum-Produktion mit glänzendem Boden" decoding="async" width="900" height="600"></div>
+        <h3>Industrie &amp; Produktion</h3>
+        <p>Reinigungslösungen für komplexe und sensible Bereiche.</p>
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#kontakt" class="tile">
+        <div class="tile__img"><img src="assets/img/branche-gesundheit.jpg" alt="Behandlungszimmer einer Arztpraxis" decoding="async" width="900" height="600"></div>
+        <h3>Gesundheitswesen</h3>
+        <p>Höchste Hygienestandards für Patienten und Personal.</p>
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+      <a href="#kontakt" class="tile">
+        <div class="tile__img"><img src="assets/img/branche-immobilien.jpg" alt="Fassade einer modernen Wohnanlage" decoding="async" width="900" height="600"></div>
+        <h3>Immobilien &amp; Wohnanlagen</h3>
+        <p>Gepflegte Objekte – langfristig wertbeständig.</p>
+        <svg class="icon"><use href="#i-arrow"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Philosophie / Nachhaltigkeit -->
+<section class="section philo" id="nachhaltigkeit">
+  <div class="container philo__grid">
+    <div class="philo__media">
+      <img src="assets/img/philosophie.jpg" alt="Lichtdurchflutete, makellos saubere Büroetage" decoding="async" width="1500" height="900">
+      <p class="philo__note">Mehr als Reinigung –<br>ein Beitrag zu gesunden und erfolgreichen Arbeitswelten.</p>
+    </div>
+    <div class="philo__text reveal">
+      <p class="eyebrow">Unsere Philosophie</p>
+      <h2>Sauberkeit schafft<br>Möglichkeiten.</h2>
+      <p class="lead">Wir bei Nordklar sind überzeugt: Gepflegte Räume wirken – auf Mitarbeitende, Kunden und Patienten. Deshalb arbeiten wir mit ökologisch zertifizierten Reinigungsmitteln, dosiergenauen Systemen und ressourcenschonenden Verfahren.</p>
+      <ul class="checklist">
+        <li><svg class="icon"><use href="#i-check"/></svg>Reinigungsmittel mit EU Ecolabel</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Bis zu 40&nbsp;% weniger Wasserverbrauch</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Mikrofasersysteme statt Einwegtücher</li>
+        <li><svg class="icon"><use href="#i-check"/></svg>Kurze Wege durch regionale Teams</li>
+      </ul>
+      <a href="#kontakt" class="btn btn--navy">Mehr über Nordklar <svg class="icon"><use href="#i-arrow"/></svg></a>
     </div>
   </div>
 </section>
@@ -612,10 +750,14 @@
   <img class="cta__bg" src="assets/img/cta.jpg" alt="" decoding="async" width="1920" height="640">
   <div class="container cta__inner">
     <div>
-      <h2>Jetzt unverbindlich anfragen.</h2>
-      <p>Wir beraten Sie gerne und erstellen ein individuelles Angebot für Ihre Anforderungen.</p>
+      <h2>Lieber kurz telefonieren?</h2>
+      <p>Hinterlassen Sie Ihre Nummer – wir rufen Sie werktags innerhalb von 60 Minuten zurück.</p>
     </div>
-    <a href="#kontakt" class="btn btn--white">Kontakt aufnehmen <svg class="icon"><use href="#i-arrow"/></svg></a>
+    <form class="callback js-form" data-form="rueckruf" novalidate>
+      <input type="tel" name="telefon" required placeholder="Ihre Telefonnummer" autocomplete="tel" aria-label="Telefonnummer">
+      <button type="submit" class="btn btn--blue">Rückruf anfordern <svg class="icon"><use href="#i-arrow"/></svg></button>
+      <p class="form__msg" role="status"></p>
+    </form>
   </div>
 </section>
 
@@ -671,10 +813,13 @@
   </div>
 </footer>
 
+<!-- Schwebender Angebots-Button -->
+<a href="#angebot" class="floatcta" aria-hidden="true" tabindex="-1"><span class="floatcta__dot"></span>Kostenloses Angebot in 60 Sekunden <svg class="icon"><use href="#i-arrow"/></svg></a>
+
 <!-- Mobile Aktionsleiste -->
 <div class="mobilebar">
   <a href="tel:+492117489200" class="mobilebar__call"><svg class="icon"><use href="#i-phone"/></svg>Anrufen</a>
-  <a href="#kontakt" class="mobilebar__quote">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
+  <a href="#angebot" class="mobilebar__quote">Angebot anfordern <svg class="icon"><use href="#i-arrow"/></svg></a>
 </div>
 
 <script src="js/main.js" defer></script>
